@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cartelera - SIS-CINE</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🎬 Cartelera de Películas</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="login.html">Iniciar Sesión</a>
+      <a href="registro.html">Registrarse</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="cartelera">
+      <h2>Cartelera</h2>
+      <div class="peliculas-container" id="cartelera">
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const peliculas = [
+      {
+        titulo: "El Viaje Interminable",
+        sinopsis: "Una aventura de ciencia ficción a través del espacio y el tiempo.",
+        duracion: "120 min",
+        clasificacion: "PG-13",
+        horarios: ["15:00", "18:00", "21:00"],
+        imagen: "pelicula1.jpg"
+      },
+      {
+        titulo: "Terror en la Niebla",
+        sinopsis: "Una ciudad atrapada en un misterio sobrenatural.",
+        duracion: "100 min",
+        clasificacion: "R",
+        horarios: ["17:30", "20:00", "22:30"],
+        imagen: "pelicula2.jpeg"
+      }
+    ];
+
+    const cartelera = document.getElementById('cartelera');
+    peliculas.forEach(p => {
+      cartelera.innerHTML += `
+        <div class="pelicula-card">
+          <img src="${p.imagen}" alt="${p.titulo}">
+          <div class="pelicula-info">
+            <h3>${p.titulo}</h3>
+            <p><strong>Duración:</strong> ${p.duracion}</p>
+            <p><strong>Clasificación:</strong> ${p.clasificacion}</p>
+            <p>${p.sinopsis}</p>
+            <p><strong>Horarios:</strong> ${p.horarios.join(", ")}</p>
+          </div>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>
