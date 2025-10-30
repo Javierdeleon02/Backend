@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn clean install'  // o npm install, gradle build, etc. según tu proyecto
+                bat 'mvn clean install'  // o npm install, gradle build, etc. según tu proyecto
             }
         }
         stage('SonarQube Analysis') {
