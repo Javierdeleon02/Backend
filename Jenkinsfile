@@ -17,7 +17,7 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv('SonarQubeServer') {
-                    bat "${scannerHome}\\bin\\sonar-scanner.bat -Dsonar.projectKey=Proyecto_ACS\Backend -Dsonar.sources=src -Dsonar.java.binaries=target\\classes"
+                    bat "${scannerHome}\\bin\\sonar-scanner.bat -Dsonar.projectKey=Proyecto_ACS -Dsonar.sources=Backend -Dsonar.java.binaries=target\\classes"
                 }
             }
         }
